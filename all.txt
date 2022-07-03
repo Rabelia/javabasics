@@ -1,0 +1,298 @@
+import javax.imageio.ImageIO;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+1.
+
+
+public class z1 {
+    private static void Gui1() {
+        JFrame frame = new JFrame();
+
+        frame.setSize(300, 300);
+        frame.setLayout(null);
+        frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+
+    public static void main() {
+        javax.swing.SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                Gui1();
+            }
+        });
+    }
+}
+
+2.
+
+
+public class z2 {
+    private static void Gui2() {
+        JFrame frame = new JFrame();
+
+        JButton btn = new JButton("click");
+        btn.setBounds(5, 5, 250, 250);
+
+        Icon button_icon = new ImageIcon("src/icons/button.png");
+        btn.setIcon(button_icon);
+
+        frame.add(btn);
+        frame.setSize(300, 300);
+        frame.setLayout((LayoutManager)null);
+        frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+
+    public static void main() {
+        javax.swing.SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                Gui2();
+            }
+        });
+    }
+}
+
+4.
+
+
+public class z4 {
+    private static void Gui4() {
+        JFrame frame = new JFrame();
+
+        JButton btn1 = new JButton("1");
+        btn1.setBounds(5, 5, 50, 50);
+
+        JButton btn2 = new JButton("2");
+        btn2.setBounds(55, 5, 50, 50);
+
+        JButton btn3 = new JButton("3");
+        btn3.setBounds(105, 5, 50, 50);
+
+        JButton btnplus = new JButton("+");
+        btnplus.setBounds(155, 5, 50, 50);
+
+        JTextField jt = new JTextField("");
+        jt.setBounds(100, 100, 100, 20);
+
+        btn1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent x) {
+                String prev_text = jt.getText();
+                String new_text = prev_text + "1";
+                jt.setText(new_text);
+            }
+        });
+
+        btn2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent x) {
+                String prev_text = jt.getText();
+                String new_text = prev_text + "2";
+                jt.setText(new_text);
+            }
+        });
+
+        btn3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent x) {
+                String prev_text = jt.getText();
+                String new_text = prev_text + "3";
+                jt.setText(new_text);
+            }
+        });
+
+        btnplus.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent x) {
+                String prev_text = jt.getText();
+                String new_text = prev_text + "+";
+                jt.setText(new_text);
+            }
+        });
+
+
+        frame.add(btn1);
+        frame.add(btn2);
+        frame.add(btn3);
+        frame.add(btnplus);
+
+        frame.add(jt);
+        frame.setSize(300, 300);
+        frame.setLayout((LayoutManager)null);
+        frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+
+    public static void main() {
+        javax.swing.SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                Gui4();
+            }
+        });
+    }
+}
+
+3. 
+
+
+public class z3 {
+    private static void Gui3() {
+        JFrame frame = new JFrame();
+
+        JButton btn = new JButton("click");
+        btn.setBounds(100, 10, 100, 40);
+
+        btn.addActionListener(new ActionListener() {
+            int i = 0;
+            @Override
+            public void actionPerformed(ActionEvent x) {
+                i++;
+                System.out.println("count:" + i);
+            }
+        });
+
+
+        frame.add(btn);
+        frame.setSize(300, 300);
+        frame.setLayout((LayoutManager)null);
+        frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+
+    public static void main() {
+        javax.swing.SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                Gui3();
+            }
+        });
+    }
+}
+
+5.
+
+
+public class z5 {
+    private static void Gui5() {
+        JFrame frame = new JFrame();
+
+        JButton btn = new JButton("show");
+        btn.setBounds(100, 10, 100, 40);
+
+        JTextField jt = new JTextField("");
+        jt.setBounds(100, 100, 100, 20);
+
+        btn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent x) {
+                System.out.println(jt.getText());
+            }
+        });
+
+        frame.add(jt);
+        frame.add(btn);
+        frame.setSize(300, 300);
+        frame.setLayout((LayoutManager) null);
+        frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+
+    public static void main() {
+        javax.swing.SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                Gui5();
+            }
+        });
+    }
+}
+
+6. 
+
+
+public class z6 {
+    private static void Gui6() {
+        JFrame frame = new JFrame();
+
+        JButton btn = new JButton("say hi");
+        btn.setBounds(100, 5, 100, 40);
+
+        JTextField jt = new JTextField("type name");
+        jt.setBounds(100, 55, 100, 40);
+
+        btn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent x) {
+                JOptionPane.showMessageDialog(null, "Hi " + jt.getText() + "!");
+            }
+        });
+
+        frame.add(jt);
+        frame.add(btn);
+        frame.setSize(300, 300);
+        frame.setLayout((LayoutManager)null);
+        frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+
+    public static void main() {
+        javax.swing.SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                Gui6();
+            }
+        });
+    }
+}
+
+7. 
+
+
+public class z7 {
+    private static void Gui7() {
+        JFrame frame = new JFrame();
+
+        JButton btn = new JButton("Show message");
+        btn.setBounds(10, 10, 200, 40);
+
+        btn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent x) {
+                JDialog dialog = new JDialog();
+                BufferedImage img = null;
+                JLabel txt = new JLabel("Hello crab!");
+
+                try {
+                    img = ImageIO.read(new File("src/icons/crab.png"));
+                } catch (IOException exception) {
+                    exception.printStackTrace();
+                }
+
+                JLabel image = new JLabel(new ImageIcon(img));
+                image.setBounds(150, 5, 512, 512);
+
+                dialog.add(image);
+                dialog.add(txt);
+                dialog.setVisible(true);
+                dialog.setSize(700, 560);
+                dialog.setLocationRelativeTo(null);
+            }
+        });
+
+        frame.add(btn);
+        frame.setSize(300, 300);
+        frame.setLayout((LayoutManager)null);
+        frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+
+    public static void main() {
+        javax.swing.SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                Gui7();
+            }
+        });
+    }
+}
